@@ -11,3 +11,13 @@ html, body {
   height: 100%;
   background-color: #222222;
 }
+
+@font-face {
+  font-family: "NerdFontOnlyIcons";
+  src: url("../assets/SymbolsNerdFontMono.ttf");
+}
+
+.nerd-icon {
+  font-family: "NerdFontOnlyIcons";
+  padding-right: 8px;
+}

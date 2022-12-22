@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate" translate="no">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="google" content="notranslate" />
 
     <link rel="manifest" href="manifest.json"/>
     <link rel="apple-touch-icon" href="assets/icon.png">
@@ -20,7 +21,7 @@
     <meta property="og:image" content="assets/icon.png">
     <meta property="og:description" content="App to read manga">
 
-    <title>Manga Reader Test</title>
+    <title>Manga Reader</title>
     <link rel="icon" type="image/png" href="assets/icon.png"/>
 
     <link rel="stylesheet" href="css/index.css">
@@ -28,6 +29,7 @@
     <link rel="stylesheet" href="css/chaptersContainer.css">
     <link rel="stylesheet" href="css/reader.css">
 
+    <script src="js/transaltor.js"></script>
     <script src="js/localStorage.js"></script>
     <script src="js/components/ChapterCard.js"></script>
     <script src="js/components/image.js"></script>
@@ -40,9 +42,9 @@
     
     <div class="file-container" id="file-container" style="display: flex;">
       <input type="file" id="file-picker" style="display: none;">
-      <span class="file-picker" id="file-picker-button" onclick="filePickerInput.click()">Upload File</span>
+      <span class="file-picker" id="file-picker-button" onclick="filePickerInput.click()"><span class="nerd-icon">祝</span><span id="file-picker-button-text">Upload File</span></span>
       <div id="continue-button" class="continue-button">
-        <span class="continue-button-text">Next</span>
+        <span id="continue-button-span" class="continue-button-text">Next</span>
       </div>
       <div class="edit-file-saved-container">
         <span class="edit-file-saved" id="edit-file-saved-button" style="display: block;">Edit JSON of manga read</span>
@@ -56,21 +58,21 @@
 
     <div class="chapters-container" id="chapters-container" style="display: none;">
       <h1 id="manga-name-title" class="manga-name-title">Manga</h1>
-      <p id="chapters-back-button" class="chapters-back-button">Back</p>
+      <p id="chapters-back-button" class="chapters-back-button"><span class="nerd-icon"></span><span id="chapters-back-button-text">Back</span></p>
       <div id="card-container" class="card-container">
       </div>
     </div>
 
     <div class="reader-container" id="reader-container" style="display: none;">
       <div class="reader-header">
-        <p id="reader-back-button" class="reader-back-button">Back</p>
-        <p class="reader-page">Page number <span id="reade-page-number">1</span></p>
+        <p id="reader-back-button" class="reader-back-button"><span class="nerd-icon"></span><span id="reader-back-button-text">Back</span></p>
+        <p class="reader-page"><span id="reader-page-text">Page number</span> <span id="reader-page-number">1 / 1</span></p>
       </div>
       <div id="reader-image-container" class="reader-image-container">
       </div>
       <div class="reader-pass-container">
-        <span id="reader-prev-button" class="reader-prev-button readerchange-button">⬅</span>
-        <span id="reader-next-button" class="reader-next-button readerchange-button">➡</span>
+        <span id="reader-prev-button" class="reader-prev-button readerchange-button nerd-icon"></span>
+        <span id="reader-next-button" class="reader-next-button readerchange-button nerd-icon"></span>
       </div>
     </div>
 

@@ -2,7 +2,7 @@
 fileContinueButton.addEventListener("click", async () => {
 
   if (filePickerInput.files.length != 1){
-    window.alert("You need to uploud just one file");
+    window.alert(getTranslationKey("ALERT_NEED_ONE_FILE"));
     console.error(`The numbers of files need to be 1, not ${filePickerInput.files.length}`)
     return;
   }
@@ -11,7 +11,7 @@ fileContinueButton.addEventListener("click", async () => {
 
   if (myFile.type != "application/json"){ 
     console.error(`The file isn't JSON, is ${myFile.type}`);
-    window.alert("The file need to be a JSON");
+    window.alert(getTranslationKey("ALERT_FILE_NEED_BE_JSON"));
     return;
   }
 
@@ -49,7 +49,7 @@ jsonSavedSaveButton.addEventListener("click", () => {
     saveDataInLocal();
   } catch(e) {
     console.error(e);
-    alert("Error: JSON format is wrong");
+    window.alert(getTranslationKey("ALERT_WRONG_JSON_FORMAT"));
   }
   
 })
@@ -62,10 +62,14 @@ jsonSavedSaveButton.addEventListener("click", () => {
 
 // Chapters screen
 chaptersBackButton.addEventListener("click", () => {
-  window.location.reload();
+  document.title = "Manga Reader";
+  fileContainer.style.display = "flex";
+  readerContainer.style.display = "none";
+  chaptersContainer.style.display = "none";
+  readerImageContainer.innerHTML = "";
+  chaptersCardContainer.innerHTML = "";
+  CURRENT_CHAPTER_INDEX = undefined;
 })
-
-
 
 
 

@@ -1,5 +1,5 @@
 var APP_PREFIX = 'MangaReader_';
-var VERSION = 'v_0.0.2';
+var VERSION = 'v_0.1.0';
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [
   "./",
@@ -9,13 +9,15 @@ var URLS = [
   "./js/clickEvents.js",
   "./js/index.js",
   "./js/localStorage.js",
+  "./js/transaltor.js",
   "./js/components/ChapterCard.js",
   "./js/components/image.js",
   "./css/chaptersContainer.css",
   "./css/filePicker.css",
   "./css/index.css",
   "./css/reader.css",
-  "./assets/icon.png"
+  "./assets/icon.png",
+  "./assets/SymbolsNerdFontMono.ttf"
 ]
 
 

@@ -9,10 +9,10 @@ function ComponentsHandler_ChapterCard(chapterIndex, chapterName){
   document.title = chapterName;
   
   readerPageNumber.innerHTML = CURRENT_PAGE_INDEX + 1 + " / " + MANGA_JSON_DATA["chapters"][CURRENT_CHAPTER_INDEX]["pages"].length ;
-  document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "inline";
   fileContainer.style.display = "none";
   chaptersContainer.style.display = "none";
   readerContainer.style.display = "flex";
+  document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "inline";
 }
 
 

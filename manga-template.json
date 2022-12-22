@@ -19,6 +19,6 @@
             "If you are using base64, you should not add more than 400 pages per file",
             "It can affect the performance"
           ]
-      }
+        }
     ]
 }
