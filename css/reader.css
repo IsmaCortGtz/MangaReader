@@ -1,0 +1,59 @@
+.reader-container {
+  flex-direction: column;
+  height: 100%;
+}
+
+.reader-back-button {
+  background-color: blue;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 15px;
+}
+
+.reader-page {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.reader-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reader-img {
+  padding: 7px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.reader-pass-container {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.readerchange-button {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.reader-prev-button  {
+ background-color: red;
+ 
+}
+
+.reader-next-button {
+  background-color: blue;
+}
