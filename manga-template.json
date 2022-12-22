@@ -1,0 +1,24 @@
+{
+    "manga-name": "name of manga",
+    "icon-base64": "data:image/png;base64, [manga icon in base64]",
+    "chapters": [
+        {
+            "name": "name of the chapter",
+            "pages": [
+              "url of page",
+              "data:image/png;base64, [page in base64]",
+              "the pages will be showed with the index order of this array",
+              "you can use base64 and URL remote file"
+            ]
+        },
+        {
+          "name": "name of the chapter",
+          "pages": [
+            "url of page",
+            "data:image/png;base64, [page in base64]",
+            "If you are using base64, you should not add more than 400 pages per file",
+            "It can affect the performance"
+          ]
+      }
+    ]
+}
