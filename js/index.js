@@ -1,5 +1,5 @@
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/manga-reader/sw.js', {scope: '/manga-reader/'})
+  navigator.serviceWorker.register('./sw.js');
 }
 
 

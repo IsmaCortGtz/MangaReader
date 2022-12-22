@@ -2,12 +2,12 @@
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "Manga Reader",
   "short_name": "MangaReader",
-  "start_url": "/manga-reader/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#222222",
   "description": "An app to read manga",
   "icons": [{
-    "src": "/manga-reader/assets/icon.png",
+    "src": "./assets/icon.png",
     "sizes": "500x500",
     "type": "image/png"
   }]
