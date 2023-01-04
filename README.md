@@ -1,6 +1,6 @@
 # Manga Reader
 
-Tool for Read manga using [my custom format](./manga-template.json)
+Tool for Read manga using [my custom format](./manga-template.json). In each file you can save just one chapter.
 
 ## License
 #### [MIT License](https://opensource.org/licenses/MIT)
