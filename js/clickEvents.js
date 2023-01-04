@@ -18,13 +18,23 @@ fileContinueButton.addEventListener("click", async () => {
   let fileText = await myFile.text();
   MANGA_JSON_DATA = JSON.parse(fileText);
 
-  renderChaptersList();
-
-  document.title = MANGA_JSON_DATA["manga-name"];
+  if (LAST_PAGE_RENDERED !== MANGA_JSON_DATA["chapter-name"]){
+    renderAllPages();
+    LAST_PAGE_RENDERED = MANGA_JSON_DATA["chapter-name"];
+  }else{
+    document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "inline";
+  }
+  
+  readerPageNumber.innerHTML = CURRENT_PAGE_INDEX + 1 + " / " + MANGA_JSON_DATA["pages"].length;
+  document.title = MANGA_JSON_DATA["chapter-name"];
   fileContainer.style.display = "none";
-  readerContainer.style.display = "none";
-  chaptersContainer.style.display = "flex";
+  readerContainer.style.display = "flex";
+  editFileSavedButton.style.display = "block";
+  editSavedJsonArea.style.display = "none";
+  jsonSavedButtonsContainer.style.display = "none";
 });
+
+
 
 editFileSavedButton.addEventListener("click", () => {
   editSavedJsonArea.value = JSON.stringify(MANGAS_CHAPTERS_ALREADY_READ, null, 4);
@@ -60,32 +70,25 @@ jsonSavedSaveButton.addEventListener("click", () => {
 
 
 
-// Chapters screen
-chaptersBackButton.addEventListener("click", () => {
-  document.title = "Manga Reader";
-  fileContainer.style.display = "flex";
-  readerContainer.style.display = "none";
-  chaptersContainer.style.display = "none";
-  readerImageContainer.innerHTML = "";
-  chaptersCardContainer.innerHTML = "";
-  CURRENT_CHAPTER_INDEX = undefined;
-})
-
-
-
-
-
-
-
 
 // Reader Screen
 readerBackButton.addEventListener("click", () => {
-  document.title = MANGA_JSON_DATA["manga-name"];
+
+  if (MANGAS_CHAPTERS_ALREADY_READ[MANGA_JSON_DATA["manga-name"]] === undefined) {
+    MANGAS_CHAPTERS_ALREADY_READ[MANGA_JSON_DATA["manga-name"]] = []
+  }
+
+  if (!MANGAS_CHAPTERS_ALREADY_READ[MANGA_JSON_DATA["manga-name"]].includes(MANGA_JSON_DATA["chapter-name"])){
+    MANGAS_CHAPTERS_ALREADY_READ[MANGA_JSON_DATA["manga-name"]].push(MANGA_JSON_DATA["chapter-name"])
+  }
+
+  saveDataInLocal();
+
+  document.title = "Manga Reader";
   document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "none";
   CURRENT_PAGE_INDEX = 0;
-  fileContainer.style.display = "none";
+  fileContainer.style.display = "flex";
   readerContainer.style.display = "none";
-  chaptersContainer.style.display = "flex";
 });
 
 
@@ -97,18 +100,18 @@ readerPrevButton.addEventListener("click", () => {
   document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "none";
   CURRENT_PAGE_INDEX -= 1;
   document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "inline";
-  readerPageNumber.innerHTML = CURRENT_PAGE_INDEX + 1 + " / " + MANGA_JSON_DATA["chapters"][CURRENT_CHAPTER_INDEX]["pages"].length ;
+  readerPageNumber.innerHTML = CURRENT_PAGE_INDEX + 1 + " / " + MANGA_JSON_DATA["pages"].length ;
 
 });
 
 
 readerNextButton.addEventListener("click", () => {
-  if (CURRENT_PAGE_INDEX >= (MANGA_JSON_DATA["chapters"][CURRENT_CHAPTER_INDEX]["pages"].length - 1)){ 
+  if (CURRENT_PAGE_INDEX >= (MANGA_JSON_DATA["pages"].length - 1)){ 
     return
   }
 
   document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "none";
   CURRENT_PAGE_INDEX += 1;
   document.getElementById(`${CURRENT_PAGE_INDEX}-reader-img-index`).style.display = "inline";
-  readerPageNumber.innerHTML = CURRENT_PAGE_INDEX + 1 + " / " + MANGA_JSON_DATA["chapters"][CURRENT_CHAPTER_INDEX]["pages"].length ;
+  readerPageNumber.innerHTML = CURRENT_PAGE_INDEX + 1 + " / " + MANGA_JSON_DATA["pages"].length ;
 });

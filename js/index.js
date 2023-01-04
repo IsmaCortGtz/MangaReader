@@ -25,7 +25,6 @@ if (navigator.serviceWorker) {
 
 // Screens containers
 const fileContainer = document.getElementById("file-container");
-const chaptersContainer = document.getElementById("chapters-container");
 const readerContainer = document.getElementById("reader-container");
 
 
@@ -42,11 +41,6 @@ const jsonSavedButtonsContainer = document.getElementById("json-saved-buttons-co
 const jsonsavedCancelButton = document.getElementById("json-saved-cancel");
 const jsonSavedSaveButton = document.getElementById("json-saved-save");
 
-// Chapters screen elemets
-const chaptersMangaTitle = document.getElementById("manga-name-title");
-const chaptersBackButton = document.getElementById("chapters-back-button");
-const chaptersBackButtonText = document.getElementById("chapters-back-button-text");
-const chaptersCardContainer = document.getElementById("card-container");
 
 // Reader screen elements
 const readerBackButton = document.getElementById("reader-back-button");
@@ -65,7 +59,6 @@ editFileSavedButton.innerHTML = getTranslationKey("EDIT_SAVED_JSON_BUTTON");
 jsonsavedCancelButton.innerHTML = getTranslationKey("CACEL_BUTTON");
 jsonSavedSaveButton.innerHTML = getTranslationKey("SAVE_BUTTON");
 readerPageText.innerHTML = getTranslationKey("PAGE_NUMBER_SPAN");
-chaptersBackButtonText.innerHTML = getTranslationKey("BACK_BUTTON");
 readerBackButtonText.innerHTML = getTranslationKey("BACK_BUTTON");
 
 
